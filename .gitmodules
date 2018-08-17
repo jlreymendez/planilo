@@ -1,0 +1,6 @@
+[submodule "Submodules/SerializableDictionary"]
+	path = Submodules/SerializableDictionary
+	url = https://github.com/jlreymendez/Unity-SerializableDictionary
+[submodule "Submodules/xNode"]
+	path = Submodules/xNode
+	url = https://github.com/jlreymendez/xNode
