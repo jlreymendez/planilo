@@ -30,7 +30,7 @@ namespace QAI {
       T result = default(T);
       if (_blackboard.variables.TryGetValue(key, out value)) {
         // Make sure the type is valid.
-        result = value.GetType().IsAssignableFrom(typeof(T)) ? (T)value : default(T);
+        result = value.GetType().IsAssignableFrom(typeof(T)) ? (T) value : default(T);
       }
       // Check if value is the correct type.
       return result;

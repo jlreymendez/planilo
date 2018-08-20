@@ -5,8 +5,8 @@ using XNode;
 
 namespace QAI.BT {
   /// <summary>Base class for decorator nodes in the Behavior Tree.</summary>
-	[CreateNodeMenu("")]
-	[NodeTint("#CDBAFF")]
+  [CreateNodeMenu("")]
+  [NodeTint("#CDBAFF")]
   public abstract class BTDecoratorNode : BTBranchNode {
 
     /// <summary>Gets/Sets the unique child of this node.</summary>
@@ -19,12 +19,12 @@ namespace QAI.BT {
     [SerializeField][HideInInspector] protected BTConnection _child;
 
     /// <summary>Initializes this and the child node for execution.</summary>
-		protected override void Init() {
-			base.Init();
+    protected override void Init() {
+      base.Init();
       // Initialize child connection.
       if (_child != null) {
         _child.Init();
       }
-		}
+    }
   }
 }

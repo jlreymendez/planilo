@@ -5,8 +5,8 @@ using XNode;
 
 namespace QAI.BT {
 
-	/// <summary>Base class for task nodes.</summary>
-	[CreateNodeMenu("")]
-	[NodeTint("#BBFFBA")]
-	public abstract class BTTaskNode : BTNode {}
+  /// <summary>Base class for task nodes.</summary>
+  [CreateNodeMenu("")]
+  [NodeTint("#BBFFBA")]
+  public abstract class BTTaskNode : BTNode { }
 }

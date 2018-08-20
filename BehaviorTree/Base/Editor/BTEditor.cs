@@ -13,7 +13,7 @@ namespace QAI.BT {
       // Make sure type is a valid instance.
       if (!type.IsSubclassOf(typeof(BTNode)) && !type.IsSubclassOf(typeof(BlackboardBaseNode))) { return null; }
       // Return name as normal
-      else return base.GetNodeMenuName(type).Replace("BT/","");
+      return base.GetNodeMenuName(type).Replace("BT/", "");
     }
   }
 }

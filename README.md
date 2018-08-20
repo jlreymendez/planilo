@@ -1,6 +1,5 @@
-![AI Graphs](https://i.imgur.com/NpPXtBH.png)
-
 ### AIGraphs (based on xNode)
+![AI Graphs](https://i.imgur.com/NpPXtBH.png)
 A set of tools for designing AI in a visual node editor on unity. Use for:
 * Behavior Trees.
 

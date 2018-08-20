@@ -10,7 +10,7 @@ namespace QAI {
 
     /// <summary>A serializable dictionary for the blackboard data.</summary>
     [System.Serializable]
-    public class AIBlackboardDictionary : SerializableDictionary<string, object> {}
+    public class AIBlackboardDictionary : SerializableDictionary<string, object> { }
 
     /// <summary>A reference to the blackboard dictionary.</summary>
     [SerializeField] public AIBlackboardDictionary variables = new AIBlackboardDictionary();

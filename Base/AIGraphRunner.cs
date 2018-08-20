@@ -25,6 +25,8 @@ namespace QAI {
         InitBlackboard();
       }
     }
+
+    /// <summary>Internal reference to the graph to be executed.</summary>
     [SerializeField] protected AIGraph _graph;
 
     /// <summary>Whether the runner has an initialized graph to be run.</summary>
