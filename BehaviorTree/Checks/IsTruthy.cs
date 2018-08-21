@@ -17,9 +17,8 @@ namespace QAI.BT.Custom {
       protected override BTGraphResult InternalRun() {
         // Check if variable is null.
         bool variable = GetBlackboardValue<bool>("_variable", _variable);
-        bool isTrue = variable == true;
         // If null return return state otherwise return null.
-        return isTrue ? BTGraphResult.Success : BTGraphResult.Failure;
+        return variable ? BTGraphResult.Success : BTGraphResult.Failure;
       }
     }
   }
