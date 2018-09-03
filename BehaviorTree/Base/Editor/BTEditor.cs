@@ -6,7 +6,7 @@ namespace QAI.BT {
 
   /// <summary>Custom graph editor for BTGraph.</summary>
   [CustomNodeGraphEditor(typeof(BTGraph))]
-  public class BTEditor : NodeGraphEditor {
+  public class BTEditor : AIGraphEditor {
 
     /// <summary>Show available nodes to be created for the graph.</summary>
     public override string GetNodeMenuName(System.Type type) {

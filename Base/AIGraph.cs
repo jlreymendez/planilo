@@ -47,10 +47,5 @@ namespace QAI {
     /// </summary>
     /// <param name="blackboard"> The blackboard use to execute the graph.</param>
     public abstract AIGraphResult Run(AIBlackboard blackboard);
-
-    /// <summary>Whether the graph require repain during updates.</summary>
-    public override bool RepaintOnUpdate {
-      get { return Application.isEditor; }
-    }
   }
 }

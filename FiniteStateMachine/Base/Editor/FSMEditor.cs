@@ -6,7 +6,7 @@ namespace QAI.FSM {
 
   /// <summary>A custom editor for FSMGraph.</summary>
   [CustomNodeGraphEditor(typeof(FSMGraph))]
-  public class FSMEditor : NodeGraphEditor {
+  public class FSMEditor : AIGraphEditor {
 
     /// <summary>Get available types of nodes to be created.</summary>
     public override string GetNodeMenuName(System.Type type) {
