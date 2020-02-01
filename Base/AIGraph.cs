@@ -7,7 +7,6 @@ namespace QAI {
   /// <summary>
   /// Base class for all AI graphs.
   /// </summary>
-  [CreateAssetMenu(fileName = "Machine", menuName = "FSM/Machine", order = 1)]
   public abstract class AIGraph : NodeGraph {
 
     /// <summary>Returns the current blackboard being executed.</summary>
