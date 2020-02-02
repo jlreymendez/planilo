@@ -7,7 +7,7 @@ namespace Planilo.BT {
 
   /// <summary>Behavior tree node that will execute a sub behavior tree.</summary>
   [CreateNodeMenu("BT/Subtree")]
-  [NodeTint("#ffdfba")]
+  [NodeTint("#6b562e")]
   public class BTSubtreeNode : BTTaskNode {
 
     /// <summary>Subtree that will be run.</summary>

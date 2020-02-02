@@ -9,7 +9,7 @@ namespace Planilo.BT {
   /// <summary>Base class for composite nodes of the Behavior Tree.</summary>
   /// <remarks>Inherits from <see cref="Planilo.BT.BTBranchNode"/>.</remarks>
   [CreateNodeMenu("")]
-  [NodeTint("#bae1ff")]
+  [NodeTint("#2e4e6b")]
   public abstract class BTCompositeNode : BTBranchNode {
 
     /// <summary>List of children connections for the node.</summary>

@@ -6,7 +6,7 @@ using XNode;
 namespace Planilo.BT {
   /// <summary>Base class for decorator nodes in the Behavior Tree.</summary>
   [CreateNodeMenu("")]
-  [NodeTint("#CDBAFF")]
+  [NodeTint("#2e6b6b")]
   public abstract class BTDecoratorNode : BTBranchNode {
 
     /// <summary>Gets/Sets the unique child of this node.</summary>

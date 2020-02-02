@@ -7,6 +7,6 @@ namespace Planilo.BT {
 
   /// <summary>Base class for task nodes.</summary>
   [CreateNodeMenu("")]
-  [NodeTint("#BBFFBA")]
+  [NodeTint("#2e6b38")]
   public abstract class BTTaskNode : BTNode { }
 }

@@ -7,7 +7,7 @@ namespace Planilo.FSM {
 
   /// <summary>Base node for all state nodes in a Finite State Machine.</summary>
   [CreateNodeMenu("")]
-  [NodeTint("#bae1ff")]
+  [NodeTint("#2e4e6b")]
   public abstract class FSMStateNode : FSMNode {
 
     /// <summary>Get/Set whether this is the entry state.</summary>

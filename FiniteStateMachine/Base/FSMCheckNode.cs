@@ -8,7 +8,7 @@ namespace Planilo.FSM {
   /// <summary>Base node for all check nodes in a Finite State Machine.</summary>
   /// <remarks>Check nodes are used to control whether transitions are activated or not.</remarks>
   [CreateNodeMenu("")]
-  [NodeTint("#BAFFBE")]
+  [NodeTint("#2e6b38")]
   public abstract class FSMCheckNode : FSMNode {
     /// <summary>Connection to current state.</summary>
     [Input] public FSMConnection _entry;
