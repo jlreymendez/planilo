@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
 
   /// <summary>Class to represent a Finite State Machine as an AI graph.</summary>
   [CreateAssetMenu(fileName = "Machine", menuName = "FSM/Machine", order = 1)]

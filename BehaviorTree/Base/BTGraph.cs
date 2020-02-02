@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Class to represent a behavior tree as an AIGraph.</sumamry>
   [CreateAssetMenu(fileName = "BehaviorTree", menuName = "BT/BehaviorTree", order = 1)]

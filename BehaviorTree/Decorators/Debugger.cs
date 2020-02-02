@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
 	/// <summary>A decorator node debugging the output of the child node.</summary>
   [CreateNodeMenu("BT/Decorator/Debugger")]

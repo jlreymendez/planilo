@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI {
+namespace Planilo {
 
   /// <summary>A base class for nodes that provide blackboard data to other nodes.</summary>
   [CreateNodeMenu("")]

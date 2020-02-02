@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using QAI.BT;
+using Planilo.BT;
 using UnityEngine;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
   [CreateNodeMenu("FSM/State/BehaviorTree")]
   public class FSMBehaviorTreeNode : FSMStateNode {
 

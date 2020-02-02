@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
 
   /// <summary>Finite State Machine node that will execute a sub machine.</summary>
   [CreateNodeMenu("FSM/State/Submachine")]

@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using XNode;
 
-namespace QAI {
+namespace Planilo {
 
   /// <summary>A generic class for node's of different types in the blackboard.</summary>
   [CreateNodeMenu("")]

@@ -1,4 +1,4 @@
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>AI graph result implementation for Behavior Trees.</summary>
   public class BTGraphResult : AIGraphResult {

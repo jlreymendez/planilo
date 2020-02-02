@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
 
   /// <summary>Base node for all state nodes in a Finite State Machine.</summary>
   [CreateNodeMenu("")]

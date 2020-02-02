@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QAI {
+namespace Planilo {
 
   /// <summary>Class for a AI graph blackboard.</summary>
   public class AIBlackboard : ScriptableObject {

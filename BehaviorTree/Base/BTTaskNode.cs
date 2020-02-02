@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Base class for task nodes.</summary>
   [CreateNodeMenu("")]

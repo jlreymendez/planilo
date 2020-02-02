@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>A builder for dynamic Behavior Trees based on a selector and multiple subtrees.</summary>
   /// <remarks>Inherits from <see cref="UnityEngine.MonoBehaviour"/></remarks>

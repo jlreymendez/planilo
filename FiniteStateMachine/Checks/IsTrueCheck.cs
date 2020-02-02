@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.FSM.Custom {
+namespace Planilo.FSM.Custom {
 
   /// <summary>A node for checking if a blackboard variable is null.</summary>
   [CreateNodeMenu("FSM/Check/IsTrue")]

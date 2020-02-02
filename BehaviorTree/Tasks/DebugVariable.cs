@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace QAI.BT.Custom {
+namespace Planilo.BT.Custom {
 
   /// <summary>An example task node that debugs a blackboard variable.</summary>
   [CreateNodeMenu("BT/Action/DebugVariable")]

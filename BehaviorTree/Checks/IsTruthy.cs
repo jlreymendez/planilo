@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT.Custom {
+namespace Planilo.BT.Custom {
   namespace BT {
 
 	  /// <summary>A node for checking if a bool blackboard variable is true.</summary>

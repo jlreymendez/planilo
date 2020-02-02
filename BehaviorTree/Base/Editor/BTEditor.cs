@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using XNodeEditor;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Custom graph editor for BTGraph.</summary>
   [CustomNodeGraphEditor(typeof(BTGraph))]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
 
   /// <summary>Class used for connecting nodes in the graph.</summary>
   [System.Serializable]

@@ -3,7 +3,7 @@ using UnityEngine;
 using XNode;
 using XNodeEditor;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Custom editor for BTDecoratorNode.</summary>
   [CustomNodeEditor(typeof(BTDecoratorNode))]
@@ -25,7 +25,7 @@ namespace QAI.BT {
       // Check if we need to create new exit.
       _child = target.GetOutputPort("_child");
       if (_child == null) {
-        _child = target.AddInstanceOutput(typeof(BTConnection), Node.ConnectionType.Override, "_child");
+        _child = target.AddInstanceOutput(typeof(BTConnection), Node.ConnectionType.Override, Node.TypeConstraint.Inherited, "_child");
       }
 
       // Output port field.

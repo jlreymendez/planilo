@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI {
+namespace Planilo {
   /// <summary>
   /// Base class for all AI graphs.
   /// </summary>

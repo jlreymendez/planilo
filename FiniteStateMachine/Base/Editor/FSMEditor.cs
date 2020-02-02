@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using XNodeEditor;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
 
   /// <summary>A custom editor for FSMGraph.</summary>
   [CustomNodeGraphEditor(typeof(FSMGraph))]

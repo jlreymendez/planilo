@@ -3,7 +3,7 @@ using UnityEngine;
 using XNode;
 using XNodeEditor;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Custom editor for BTNode.</summary>
   [CustomNodeEditor(typeof(BTNode))]

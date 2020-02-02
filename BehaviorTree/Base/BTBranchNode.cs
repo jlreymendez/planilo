@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Base class for nodes at the branch level of the behavior tree.</summary>
-  /// <remarks>Inherits from <see cref="QAI.BT.BTNode"/></remarks>
+  /// <remarks>Inherits from <see cref="Planilo.BT.BTNode"/></remarks>
   public abstract class BTBranchNode : BTNode {
 
     /// <summary>Gets whether the node is the root of the behavior tree. Sets or unset the node as the root.</summary>

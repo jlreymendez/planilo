@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using XNodeEditor;
 
-namespace QAI {
+namespace Planilo {
 
   /// <summary>Base editor class for any AIGraph editor.</summary>
   public abstract class AIGraphEditor : NodeGraphEditor {

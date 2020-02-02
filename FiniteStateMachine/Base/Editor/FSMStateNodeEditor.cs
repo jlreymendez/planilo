@@ -3,7 +3,7 @@ using UnityEngine;
 using XNode;
 using XNodeEditor;
 
-namespace QAI.FSM {
+namespace Planilo.FSM {
   /// <summary>A custom node editor for state nodes.</summary>
   [CustomNodeEditor(typeof(FSMStateNode))]
   public class FSMStateNodeEditor : NodeEditor {
@@ -32,7 +32,7 @@ namespace QAI.FSM {
       // Check if we need to create new entry.
       _entry = target.GetInputPort("entry");
       if (_entry == null) {
-        _entry = target.AddInstanceInput(typeof(FSMConnection), Node.ConnectionType.Override, "entry");
+        _entry = target.AddInstanceInput(typeof(FSMConnection), Node.ConnectionType.Override, Node.TypeConstraint.Inherited, "entry");
       }
 
       // If entry connection is not empty create new entry.
@@ -44,7 +44,7 @@ namespace QAI.FSM {
       // Check if we need to create new exit.
       _exit = target.GetOutputPort("exit");
       if (_exit == null) {
-        _exit = target.AddInstanceOutput(typeof(FSMConnection), Node.ConnectionType.Override, "exit");
+        _exit = target.AddInstanceOutput(typeof(FSMConnection), Node.ConnectionType.Override, Node.TypeConstraint.Inherited, "exit");
       }
 
       // If exit connection is not empty create new exit.

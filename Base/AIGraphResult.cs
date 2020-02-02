@@ -1,4 +1,4 @@
-namespace QAI {
+namespace Planilo {
 
   /// <summary>
   /// Base class for all types AI graphs results.

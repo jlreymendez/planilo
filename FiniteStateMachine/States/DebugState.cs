@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QAI.FSM.Custom {
+namespace Planilo.FSM.Custom {
 
   /// <summary>A minimal debug example of a State Node</summary>
   [CreateNodeMenu("FSM/State/Debug")]

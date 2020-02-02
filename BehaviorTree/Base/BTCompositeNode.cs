@@ -4,16 +4,18 @@ using System.Linq;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Base class for composite nodes of the Behavior Tree.</summary>
-  /// <remarks>Inherits from <see cref="QAI.BT.BTBranchNode"/>.</remarks>
+  /// <remarks>Inherits from <see cref="Planilo.BT.BTBranchNode"/>.</remarks>
   [CreateNodeMenu("")]
   [NodeTint("#bae1ff")]
   public abstract class BTCompositeNode : BTBranchNode {
 
     /// <summary>List of children connections for the node.</summary>
     [SerializeField][HideInInspector] protected List<BTConnection> _children = new List<BTConnection>();
+
+    // [Output(dynamicPortList = true)] public BTConnection[] _list = new BTConnection[0];
 
     /// <summary>Initializer called on creation and preparation.</summary>
     protected override void Init() {

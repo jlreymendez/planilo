@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
 	/// <summary>A composite node implementing a sequencer (stop on child failure).</summary>
   [CreateNodeMenu("BT/Composite/Sequencer")]

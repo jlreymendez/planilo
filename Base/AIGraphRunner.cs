@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QAI {
+namespace Planilo {
   /// <summary>Class for executing AI Graph attached to a Game Object. Inherits from <c>MonoBehaviour</c>.</summary>
   public class AIGraphRunner : MonoBehaviour {
 

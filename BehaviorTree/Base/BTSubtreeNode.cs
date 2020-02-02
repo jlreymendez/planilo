@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
   /// <summary>Behavior tree node that will execute a sub behavior tree.</summary>
   [CreateNodeMenu("BT/Subtree")]

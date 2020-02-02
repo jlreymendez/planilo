@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT.Custom {
+namespace Planilo.BT.Custom {
 
   /// <summary>A node for checking if a blackboard variable is null.</summary>
   [CreateNodeMenu("BT/Check/IsNull")]

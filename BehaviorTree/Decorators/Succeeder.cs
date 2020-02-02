@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
 	/// <summary>A decorator node forcing success on any output of the child node.</summary>
   [CreateNodeMenu("BT/Decorator/Succeeder")]
@@ -15,7 +15,7 @@ namespace QAI.BT {
       if (_child != null) {
         _child.Run();
       }
-      // Return negation of result.
+      // Always return success.
       return BTGraphResult.Success;
     }
   }

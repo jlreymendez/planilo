@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QAI.BT {
+namespace Planilo.BT {
 
 	/// <summary>A composite node implementing a selector (stop on child success).</summary>
   [CreateNodeMenu("BT/Composite/Selector")]
