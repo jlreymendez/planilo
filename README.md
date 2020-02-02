@@ -1,5 +1,5 @@
-### qAI (based on xNode)
-![qAI](https://i.imgur.com/NpPXtBH.png)
+### Planilo (based on xNode)
+![Planilo](https://i.imgur.com/NpPXtBH.png)
 
 A set of tools for designing AI in a visual node editor on unity. Use for:
 * Behavior Trees.
@@ -13,7 +13,7 @@ A set of tools for designing AI in a visual node editor on unity. Use for:
 * Ready implemented examples to use as guidance.
 * See highlighted nodes in runtime to understand how your AI graphs are running.
 * Modularize your AI graphs and execute them as part of nodes of other AI graphs.
-* See more in [documentation](https://github.com/jlreymendez/qAI/wiki)
+* See more in [documentation](https://github.com/jlreymendez/planilo/wiki)
 
 ### Using (Thanks to):
 * [xNode by Siccity](https://github.com/Siccity/xNode)
