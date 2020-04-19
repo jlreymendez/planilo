@@ -1,6 +1,6 @@
 ﻿{
 	"name": "Planilo",
-	"references": [],
+	"references": ["XNode","XNodeEditor"],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
