@@ -1,7 +1,10 @@
+using Planilo.BT;
+
 namespace Planilo
 {
     public interface IAIBehaviour<T>
     {
-        void Run(T agent);
+        BehaviourTreeState[] Initialize(ref T agent);
+        BehaviourTreeState[] Run(ref T agent, BehaviourTreeState[] state);
     }
 }
