@@ -16,7 +16,7 @@ namespace Planilo.BT.Editor
         {
             // Make sure node is connected.
             var node = target as BehaviourTreeGraphNode;
-            if (node.Index < 0) return GetEditorTint();
+            if (node.Index < 0 || Application.isPlaying == false) return GetEditorTint();
 
             // Check if there is an active game object with a runner.
             IAIBehaviourRunner<BehaviourTreeState> runner = Selection.activeGameObject != null ?
