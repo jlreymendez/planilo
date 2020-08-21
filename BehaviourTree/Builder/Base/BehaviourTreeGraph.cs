@@ -39,6 +39,8 @@ namespace Planilo.BT.Builder
 
             return node;
         }
+
+        public BehaviourTreeGraphNode Root => root;
         #endregion
 
         #region Protected
