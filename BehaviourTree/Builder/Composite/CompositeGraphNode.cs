@@ -7,7 +7,22 @@ namespace Planilo.BT.Builder
     public abstract class CompositeGraphNode : BehaviourTreeGraphNode
     {
         #region Public
-        public override int Size => children.Count + 1;
+        public override int Size
+        {
+            get
+            {
+                var size = 0;
+                for (var i = 0; i < children.Count; i++)
+                {
+                    var port = GetOutputPort(string.Format(ChildrenPortNameFormat, i));
+                    var connectedNode = port.Connection.node as BehaviourTreeGraphNode;
+                    if (connectedNode == null) continue;
+                    size += connectedNode.Size;
+                }
+
+                return size + 1;
+            }
+        }
         #endregion
 
         #region Protected
