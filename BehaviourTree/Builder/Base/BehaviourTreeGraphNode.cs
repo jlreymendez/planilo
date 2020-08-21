@@ -18,6 +18,7 @@ namespace Planilo.BT.Builder
             if (AllowedType == null || AllowedType.IsAssignableFrom(typeof(T)))
             {
                 index++;
+                Index = index;
                 return ProtectedBuild<T>(ref index);
             }
 
@@ -36,6 +37,7 @@ namespace Planilo.BT.Builder
         }
 
         public virtual int Size => 1;
+        public int Index { get; set; }
 
         public override object GetValue(NodePort port)
         {
@@ -53,6 +55,7 @@ namespace Planilo.BT.Builder
 
         protected override void Init()
         {
+            Index = -1;
             name = string.IsNullOrEmpty(NiceName) ? name : NiceName;
         }
         #endregion
