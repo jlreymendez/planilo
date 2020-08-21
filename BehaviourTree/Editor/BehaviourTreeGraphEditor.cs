@@ -1,7 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
 using Planilo.BT.Builder;
 using UnityEditor;
-using UnityEngine;
 using XNodeEditor;
 
 namespace Planilo.BT.Editor
@@ -9,6 +8,12 @@ namespace Planilo.BT.Editor
     [CustomNodeGraphEditor(typeof(BehaviourTreeGraph))]
     public class BehaviourTreeGraphEditor : NodeGraphEditor
     {
+        public override string GetNodeMenuName(Type type)
+        {
+            if (typeof(BehaviourTreeGraphNode).IsAssignableFrom(type) == false) return null;
+            return base.GetNodeMenuName(type).Replace("BT/", "");
+        }
+
         public override void OnGUI()
         {
             var runner = Selection.activeGameObject != null ?
