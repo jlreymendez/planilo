@@ -1,7 +1,7 @@
 namespace Planilo
 {
-    public interface IAIBehaviourBuilder
+    public interface IAIBehaviourBuilder<K>
     {
-        IAIBehaviour<T> Build<T>();
+        IAIBehaviour<T, K> Build<T>();
     }
 }

@@ -2,9 +2,9 @@ using Planilo.BT;
 
 namespace Planilo
 {
-    public interface IAIBehaviour<T>
+    public interface IAIBehaviour<T, K>
     {
-        BehaviourTreeState[] Initialize(ref T agent);
-        BehaviourTreeState[] Run(ref T agent, BehaviourTreeState[] state);
+        K[] Initialize(ref T agent);
+        void Run(ref T agent, K[] state);
     }
 }

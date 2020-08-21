@@ -1,6 +1,6 @@
 namespace Planilo.BT
 {
-    public class BehaviourTree<T> : IAIBehaviour<T>
+    public class BehaviourTree<T> : IAIBehaviour<T, BehaviourTreeState>
     {
         #region Public
         public BehaviourTree(BehaviourTreeNode<T> root, int size)
@@ -14,10 +14,9 @@ namespace Planilo.BT
             return new BehaviourTreeState[size];
         }
 
-        public BehaviourTreeState[] Run(ref T agent, BehaviourTreeState[] state)
+        public void Run(ref T agent, BehaviourTreeState[] state)
         {
             root.Run(ref agent, state);
-            return state;
         }
         #endregion
 

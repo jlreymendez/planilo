@@ -5,10 +5,10 @@ using XNode;
 namespace Planilo.BT.Builder
 {
     [CreateAssetMenu(menuName = "Planilo/BT/Tree")]
-    public class BehaviourTreeGraph : NodeGraph, IAIBehaviourBuilder
+    public class BehaviourTreeGraph : NodeGraph, IAIBehaviourBuilder<BehaviourTreeState>
     {
         #region Public
-        public IAIBehaviour<T> Build<T>()
+        public IAIBehaviour<T, BehaviourTreeState> Build<T>()
         {
             var startIndex = -1;
             var rootNode = root.Build<T>(ref startIndex);
