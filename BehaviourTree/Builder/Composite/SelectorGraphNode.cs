@@ -1,7 +1,6 @@
 namespace Planilo.BT.Builder
 {
     [CreateNodeMenu("Planilo/BT/Composite/Selector")]
-    [NodeTint("#2e4e6b")]
     public class SelectorGraphNode : CompositeGraphNode
     {
         #region Protected

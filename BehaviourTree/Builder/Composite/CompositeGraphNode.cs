@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Planilo.BT.Builder
 {
+    [NodeTint("#2e4e6b")]
     public abstract class CompositeGraphNode : BehaviourTreeGraphNode
     {
         #region Public

@@ -1,7 +1,6 @@
 namespace Planilo.BT.Builder
 {
     [CreateNodeMenu("Planilo/BT/Composite/Sequencer")]
-    [NodeTint("#2e4e6b")]
     public class SequencerGraphNode : CompositeGraphNode
     {
         #region Protected

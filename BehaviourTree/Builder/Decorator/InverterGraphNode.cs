@@ -1,7 +1,6 @@
 ﻿namespace Planilo.BT.Builder
 {
     [CreateNodeMenu("Planilo/BT/Decorator/Inverter")]
-    [NodeTint("#6b2e53")]
     public class InverterGraphNode : DecoratorGraphNode
     {
         #region Protected

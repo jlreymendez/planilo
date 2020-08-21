@@ -2,6 +2,7 @@
 
 namespace Planilo.BT.Builder
 {
+    [NodeTint("#6b2e53")]
     public abstract class DecoratorGraphNode : BehaviourTreeGraphNode
     {
         #region Public
