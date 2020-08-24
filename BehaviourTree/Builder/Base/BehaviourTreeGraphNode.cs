@@ -15,18 +15,12 @@ namespace Planilo.BT.Builder
 
         public BehaviourTreeNode<T> Build<T>(ref int index)
         {
-        #if UNITY_EDITOR
-            if (IsRoot == false)
-            {
-                var parentNode = GetInputPort("parent").Connection.node as BehaviourTreeGraphNode;
-                BuildingGraph = parentNode.BuildingGraph;
-            }
-
-            BuildingGraph.SetNodeIndex(GetInstanceID(), index + 1);
-        #endif
-
             if (AllowedType == null || AllowedType.IsAssignableFrom(typeof(T)))
             {
+            #if UNITY_EDITOR
+                SetNodeIndexInBuildingGraph(index + 1);
+            #endif
+
                 index++;
                 Index = index;
                 return ProtectedBuild<T>(ref index);
@@ -77,6 +71,17 @@ namespace Planilo.BT.Builder
     #if UNITY_EDITOR
         #region Editor
         public BehaviourTreeGraph BuildingGraph { get; set; }
+
+        void SetNodeIndexInBuildingGraph(int index)
+        {
+            if (IsRoot == false)
+            {
+                var parentNode = GetInputPort("parent").Connection.node as BehaviourTreeGraphNode;
+                BuildingGraph = parentNode.BuildingGraph;
+            }
+
+            BuildingGraph.SetNodeIndex(GetInstanceID(), index);
+        }
         #endregion
     #endif
     }
