@@ -17,7 +17,7 @@ namespace Planilo.BT.Editor
         public override void OnGUI()
         {
             var runner = Selection.activeGameObject != null ?
-                Selection.activeGameObject.GetComponent<IAIBehaviourRunner<BehaviourTreeState>>() : null;
+                Selection.activeGameObject.GetComponent<IAIBehaviourDebugger<BehaviourTreeGraph, BehaviourTreeState>>() : null;
             if (runner != null)
             {
                 NodeEditorWindow.current.Repaint();

@@ -1,9 +1,10 @@
 ﻿namespace Planilo
 {
-    public interface IAIBehaviourRunner<TState>
+    public interface IAIBehaviourDebugger<TBehaviour, TState>
     {
     #if UNITY_EDITOR
         TState[] GetState();
+        TBehaviour GetBehaviour();
     #endif
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
@@ -10,6 +11,9 @@ namespace Planilo.BT.Builder
         #region Public
         public IAIBehaviour<T, BehaviourTreeState> Build<T>()
         {
+        #if UNITY_EDITOR
+            root.buildingGraph = this;
+        #endif
             var startIndex = -1;
             var rootNode = root.Build<T>(ref startIndex);
 
@@ -43,12 +47,24 @@ namespace Planilo.BT.Builder
         public BehaviourTreeGraphNode Root => root;
         #endregion
 
-        #region Protected
-
-        #endregion
-
         #region Private
         [SerializeField] BehaviourTreeGraphNode root;
         #endregion
+
+    #if UNITY_EDITOR
+        #region Editor
+        Dictionary<int, int> nodeIdToIndexMap = new Dictionary<int, int>();
+
+        public void SetNodeIndex(int nodeId, int index)
+        {
+            nodeIdToIndexMap[nodeId] = index;
+        }
+
+        public bool TryGetNodeIndex(int nodeId, out int index)
+        {
+            return nodeIdToIndexMap.TryGetValue(nodeId, out index);
+        }
+        #endregion
+    #endif
     }
 }

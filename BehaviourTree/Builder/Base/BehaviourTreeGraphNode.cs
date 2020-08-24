@@ -15,6 +15,16 @@ namespace Planilo.BT.Builder
 
         public BehaviourTreeNode<T> Build<T>(ref int index)
         {
+        #if UNITY_EDITOR
+            if (IsRoot == false)
+            {
+                var parentNode = GetInputPort("parent").Connection.node as BehaviourTreeGraphNode;
+                buildingGraph = parentNode.buildingGraph;
+            }
+
+            buildingGraph.SetNodeIndex(GetInstanceID(), index + 1);
+        #endif
+
             if (AllowedType == null || AllowedType.IsAssignableFrom(typeof(T)))
             {
                 index++;
@@ -22,7 +32,6 @@ namespace Planilo.BT.Builder
                 return ProtectedBuild<T>(ref index);
             }
 
-            Debug.LogError("Attempting to build node with wrong generic type.");
             return null;
         }
 
@@ -64,5 +73,11 @@ namespace Planilo.BT.Builder
         [SerializeField, HideInInspector] bool isRoot;
         [SerializeField, Input] BehaviourTreeGraphConnection parent;
         #endregion
+
+    #if UNITY_EDITOR
+        #region Editor
+        public BehaviourTreeGraph buildingGraph;
+        #endregion
+    #endif
     }
 }
