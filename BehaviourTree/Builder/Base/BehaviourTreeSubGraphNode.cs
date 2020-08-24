@@ -14,7 +14,7 @@ namespace Planilo.BT.Builder
         protected override BehaviourTreeNode<T> ProtectedBuild<T>(ref int index)
         {
         #if UNITY_EDITOR
-            subGraph.Root.buildingGraph = buildingGraph;
+            subGraph.Root.BuildingGraph = BuildingGraph;
         #endif
 
             index--;

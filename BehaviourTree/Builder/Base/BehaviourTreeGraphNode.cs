@@ -19,10 +19,10 @@ namespace Planilo.BT.Builder
             if (IsRoot == false)
             {
                 var parentNode = GetInputPort("parent").Connection.node as BehaviourTreeGraphNode;
-                buildingGraph = parentNode.buildingGraph;
+                BuildingGraph = parentNode.BuildingGraph;
             }
 
-            buildingGraph.SetNodeIndex(GetInstanceID(), index + 1);
+            BuildingGraph.SetNodeIndex(GetInstanceID(), index + 1);
         #endif
 
             if (AllowedType == null || AllowedType.IsAssignableFrom(typeof(T)))
@@ -76,7 +76,7 @@ namespace Planilo.BT.Builder
 
     #if UNITY_EDITOR
         #region Editor
-        public BehaviourTreeGraph buildingGraph;
+        public BehaviourTreeGraph BuildingGraph { get; set; }
         #endregion
     #endif
     }

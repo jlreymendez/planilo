@@ -12,7 +12,7 @@ namespace Planilo.BT.Builder
         public IAIBehaviour<T, BehaviourTreeState> Build<T>()
         {
         #if UNITY_EDITOR
-            root.buildingGraph = this;
+            root.BuildingGraph = this;
         #endif
             var startIndex = -1;
             var rootNode = root.Build<T>(ref startIndex);
