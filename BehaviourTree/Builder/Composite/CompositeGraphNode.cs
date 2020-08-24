@@ -12,7 +12,7 @@ namespace Planilo.BT.Builder
             get
             {
                 var size = 0;
-                for (var i = 0; i < children.Count; i++)
+                for (var i = 0; i < childrenCount; i++)
                 {
                     var port = GetOutputPort(string.Format(ChildrenPortNameFormat, i));
                     var connectedNode = port.Connection.node as BehaviourTreeGraphNode;
@@ -26,6 +26,22 @@ namespace Planilo.BT.Builder
         #endregion
 
         #region Protected
+
+        protected override void Init()
+        {
+            base.Init();
+            // Calculate children count.
+            // note: it appears that xNode doesn't populate the children list on init.
+                // Which results in children.Count being 0.
+            childrenCount = 0;
+            while (true)
+            {
+                var port = GetOutputPort(string.Format(ChildrenPortNameFormat, childrenCount));
+                if (port == null) break;
+                childrenCount++;
+            }
+        }
+
         protected override BehaviourTreeNode<T> ProtectedBuild<T>(ref int index)
         {
             var nodeIndex = index;
@@ -35,9 +51,8 @@ namespace Planilo.BT.Builder
 
         protected BehaviourTreeNode<T>[] BuildChildren<T>(ref int index)
         {
-            var childrenNodes = new BehaviourTreeNode<T>[children.Count];
-
-            for (var i = 0; i < children.Count; i++)
+            var childrenNodes = new BehaviourTreeNode<T>[childrenCount];
+            for (var i = 0; i < childrenCount; i++)
             {
                 var port = GetOutputPort(string.Format(ChildrenPortNameFormat, i));
                 var connectedNode = port.Connection.node as BehaviourTreeGraphNode;
@@ -55,6 +70,7 @@ namespace Planilo.BT.Builder
 
         #region Private
         [SerializeField, Output(dynamicPortList = true)] List<BehaviourTreeGraphConnection> children;
+        int childrenCount;
 
         const string ChildrenPortNameFormat = "children {0}";
         #endregion

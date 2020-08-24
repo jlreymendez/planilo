@@ -11,6 +11,7 @@ namespace Planilo.BT.Builder
 
         protected override void Init()
         {
+            base.Init();
             name = "Sequencer";
         }
         #endregion
