@@ -30,7 +30,7 @@ I'm in the process of updating this repository, if you are interested in seeing 
 * See more in [documentation](https://github.com/jlreymendez/planilo/wiki)
 
 ## Installing with Unity Package Manager
-*(Requires Unity version 2018.3.0b7  or above)*
+*(Requires Unity version 2019.1 or above)*
 
 To install this project as a [Git dependency](https://docs.unity3d.com/Manual/upm-git.html) using the Unity Package Manager,
 add the following line to your project's `manifest.json`:
@@ -38,11 +38,10 @@ add the following line to your project's `manifest.json`:
 ```
 "com.github.jlreymendez.planilo": "https://github.com/jlreymendez/planilo.git"
 ```
-NOTE: This will also install the dependencies xNode and Unity-SerializableDictionary under the Planilo path.
+NOTE: This will also install the dependencies xNode under the Planilo path.
 
 You will need to have Git installed and available in your system's PATH.
 
 ## Acknowledgements:
 * [xNode by Siccity](https://github.com/Siccity/xNode)
-* [Unity-SerializableDictionary by azixMcAze](https://github.com/azixMcAze/Unity-SerializableDictionary)
 * [Game-icons.net and Delapouite](https://game-icons.net/1x1/delapouite/choice.html)
