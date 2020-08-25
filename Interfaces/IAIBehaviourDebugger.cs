@@ -3,7 +3,7 @@
     public interface IAIBehaviourDebugger<TBehaviour, TState>
     {
     #if UNITY_EDITOR
-        TState[] GetState();
+        TState GetState();
         TBehaviour GetBehaviour();
     #endif
     }

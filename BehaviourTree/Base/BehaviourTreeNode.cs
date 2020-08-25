@@ -13,7 +13,7 @@ namespace Planilo.BT
         #endregion
 
         #region Public
-        public BehaviourTreeResult Run(ref T agent, BehaviourTreeState[] states)
+        public BehaviourTreeResult Run(ref T agent, BehaviourTreeNodeState[] states)
         {
             ref var state = ref states[nodeIndex];
             state.LastUpdateTime = Time.time;
@@ -23,11 +23,11 @@ namespace Planilo.BT
             return state.Result;
         }
 
-        public virtual void Initialize(ref T agent, ref BehaviourTreeState state) {}
+        public virtual void Initialize(ref T agent, ref BehaviourTreeNodeState nodeState) {}
 
-        public abstract BehaviourTreeResult Update(ref T agent, BehaviourTreeState[] states);
+        public abstract BehaviourTreeResult Update(ref T agent, BehaviourTreeNodeState[] states);
 
-        public virtual void Finalize(ref T agent, ref BehaviourTreeState state) {}
+        public virtual void Finalize(ref T agent, ref BehaviourTreeNodeState nodeState) {}
         #endregion
 
         #region Protected

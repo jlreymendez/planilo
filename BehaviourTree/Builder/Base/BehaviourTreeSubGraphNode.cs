@@ -23,7 +23,7 @@ namespace Planilo.BT.Builder
         #endregion
 
         #region Private
-        [SerializeField] BehaviourTreeGraph subGraph;
+        [SerializeField] BehaviourTreeGraph subGraph = default;
         #endregion
     }
 }

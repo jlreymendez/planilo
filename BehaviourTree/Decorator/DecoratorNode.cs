@@ -10,7 +10,7 @@
         #endregion
 
         #region Protected
-        protected BehaviourTreeResult UpdateChild(ref T agent, BehaviourTreeState[] states)
+        protected BehaviourTreeResult UpdateChild(ref T agent, BehaviourTreeNodeState[] states)
         {
             return child.Update(ref agent, states);
         }

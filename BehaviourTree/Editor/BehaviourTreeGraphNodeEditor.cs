@@ -15,21 +15,19 @@ namespace Planilo.BT.Editor
         public override Color GetTint()
         {
             // Make sure node is connected.
-            var node = target as BehaviourTreeGraphNode;
-            if (node.Index < 0 || Application.isPlaying == false) return GetEditorTint();
+            if (Selection.activeGameObject == null || Application.isPlaying == false) return GetEditorTint();
 
             // Check if there is an active game object with a runner.
-            var runner = Selection.activeGameObject != null ?
-                Selection.activeGameObject.GetComponent<IAIBehaviourDebugger<BehaviourTreeGraph, BehaviourTreeState>>() : null;
+            var runner = Selection.activeGameObject.GetComponent<IAIBehaviourDebugger<BehaviourTreeGraph, BehaviourTreeState>>();
             if (runner == null) return GetEditorTint();
-
 
             // Check if it is running.
             var behaviourGraph = runner.GetBehaviour();
             var runnerState = runner.GetState();
+            var node = target as BehaviourTreeGraphNode;
             if (behaviourGraph.TryGetNodeIndex(node.GetInstanceID(), out var nodeIndex))
             {
-                var state = runnerState[nodeIndex];
+                var state = runnerState.NodeStates[nodeIndex];
                 if (state.LastUpdateTime == Time.time)
                 {
                     return runningColor;

@@ -9,14 +9,14 @@ namespace Planilo.BT
             this.size = size;
         }
 
-        public BehaviourTreeState[] Initialize(ref T agent)
+        public BehaviourTreeState Initialize(ref T agent)
         {
-            return new BehaviourTreeState[size];
+            return new BehaviourTreeState(size);
         }
 
-        public void Run(ref T agent, BehaviourTreeState[] state)
+        public void Run(ref T agent, ref BehaviourTreeState state)
         {
-            root.Run(ref agent, state);
+            root.Run(ref agent, state.NodeStates);
         }
         #endregion
 

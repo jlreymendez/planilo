@@ -11,22 +11,22 @@ namespace Planilo.BT
         #endregion
 
         #region Public
-        public override void Initialize(ref T agent, ref BehaviourTreeState state)
+        public override void Initialize(ref T agent, ref BehaviourTreeNodeState nodeState)
         {
             enumerator.Reset();
-            state.Result = BehaviourTreeResult.Success;
-            NextChild(ref state);
+            nodeState.Result = BehaviourTreeResult.Success;
+            NextChild(ref nodeState);
         }
         #endregion
 
         #region Protected
         protected BehaviourTreeNode<T> current;
 
-        protected void NextChild(ref BehaviourTreeState state)
+        protected void NextChild(ref BehaviourTreeNodeState nodeState)
         {
             var hasValue = enumerator.MoveNext();
             current = hasValue ? children[enumerator.Current] : null;
-            state.Enumerator = enumerator;
+            nodeState.Enumerator = enumerator;
         }
         #endregion
 

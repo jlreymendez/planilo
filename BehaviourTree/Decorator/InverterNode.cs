@@ -7,7 +7,7 @@
         #endregion
 
         #region Public
-        public override BehaviourTreeResult Update(ref T agent, BehaviourTreeState[] states)
+        public override BehaviourTreeResult Update(ref T agent, BehaviourTreeNodeState[] states)
         {
             ref var state = ref states[nodeIndex];
             state.Result = UpdateChild(ref agent, states);

@@ -5,7 +5,7 @@ namespace Planilo.BT
         #region Public
         public Sequencer(BehaviourTreeNode<T>[] children, int index) : base(children, index) {}
 
-        public override BehaviourTreeResult Update(ref T agent, BehaviourTreeState[] states)
+        public override BehaviourTreeResult Update(ref T agent, BehaviourTreeNodeState[] states)
         {
             ref var state = ref states[nodeIndex];
             while (current)
