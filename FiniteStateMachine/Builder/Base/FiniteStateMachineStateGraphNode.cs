@@ -8,23 +8,36 @@ namespace Planilo.FSM.Builder
     public abstract class FiniteStateMachineStateGraphNode : FiniteStateMachineGraphNode
     {
         #region Internal
-        internal bool IsEntry { get; set; }
+        internal bool IsEntry
+        {
+            get => isEntry;
+            set => isEntry = value;
+        }
+
+        internal bool IsExit => isExit;
 
         [ContextMenu("Set as entry state")]
-        internal void SetAsRoot()
+        internal void SetAsEntry()
         {
             var fsmGraph = graph as FiniteStateMachineGraph;
             fsmGraph.SetEntryNode(this);
         }
 
-        internal void Build<T>(ref int nextIndex, List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap)
+        [ContextMenu("Toggle exit state")]
+        internal void SetAsExit()
+        {
+            isExit = !isExit;
+        }
+
+        internal virtual void Build<T>(ref int nextIndex, List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap)
         {
             // Register index.
             var instanceId = GetInstanceID();
             if (idToIndexMap.ContainsKey(instanceId)) return;
 
-            var index = nextIndex;
-            idToIndexMap[instanceId] = index;
+            idToIndexMap[instanceId] = nextIndex;
+            nextIndex++;
+
             var state = ProtectedBuild<T>();
             states.Add(state);
             state.Transitions = BuildTransitions(ref nextIndex, states, idToIndexMap);
@@ -41,33 +54,25 @@ namespace Planilo.FSM.Builder
             transitionsCount = 0;
             while (true)
             {
-                var transition = GetTransition(transitionsCount);
+                var transition = GetTransitionNode(transitionsCount);
                 if (transition == null) break;
                 transitionsCount++;
             }
         }
 
-        protected abstract FiniteStateMachineState<T> ProtectedBuild<T>();
-        #endregion
-
-        #region Private
-        [SerializeField, Input] FiniteStateMachineConnectionToState entry;
-        [SerializeField, Output(dynamicPortList = true)] List<FiniteStateMachineConnectionToTransition> transitions;
-        int transitionsCount;
-
-        FiniteStateMachineTransition<T>[] BuildTransitions<T>(ref int nextIndex, List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap)
+        protected virtual FiniteStateMachineTransition<T>[] BuildTransitions<T>(ref int nextIndex, List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap)
         {
             // Build transitions.
             var transitionList =  new List<FiniteStateMachineTransition<T>>();
             for (var i = 0; i < transitionsCount; i++)
             {
-                var transition = GetTransition(i);
+                var transition = GetTransitionNode(i);
                 var targetState = transition.GetTransitionState();
                 if (targetState == null) continue;
 
                 if (idToIndexMap.TryGetValue(targetState.GetInstanceID(), out var targetIndex) == false)
                 {
-                    targetIndex = ++nextIndex;
+                    targetIndex = nextIndex;
                     targetState.Build(ref nextIndex, states, idToIndexMap);
                 }
 
@@ -77,11 +82,21 @@ namespace Planilo.FSM.Builder
             return transitionList.ToArray();
         }
 
-        FiniteStateMachineTransitionGraphNode GetTransition(int index)
+        protected FiniteStateMachineTransitionGraphNode GetTransitionNode(int index)
         {
             var port = GetOutputPort(string.Format(TransitionKeyFormat, index));
             return (FiniteStateMachineTransitionGraphNode) port?.Connection?.node;
         }
+
+        protected abstract FiniteStateMachineState<T> ProtectedBuild<T>();
+        #endregion
+
+        #region Private
+        [SerializeField, Input] FiniteStateMachineConnectionToState entry;
+        [SerializeField, Output(dynamicPortList = true)] List<FiniteStateMachineConnectionToTransition> transitions;
+        [HideInInspector, SerializeField] bool isEntry;
+        [HideInInspector, SerializeField] bool isExit;
+        int transitionsCount;
 
         const string TransitionKeyFormat = "transitions {0}";
         #endregion
