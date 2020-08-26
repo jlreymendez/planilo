@@ -5,6 +5,7 @@ using XNode;
 
 namespace Planilo.FSM.Builder
 {
+    [CreateAssetMenu(menuName = "Planilo/FSM")]
     public class FiniteStateMachineGraph : NodeGraph, IAIBehaviourBuilder<FiniteStateMachineRuntimeState>
     {
         #region Public
@@ -43,7 +44,9 @@ namespace Planilo.FSM.Builder
         #endregion
 
         #region Internal
-        public void SetEntryNode(FiniteStateMachineStateGraphNode node)
+        internal FiniteStateMachineStateGraphNode EntryState => entryState;
+
+        internal void SetEntryNode(FiniteStateMachineStateGraphNode node)
         {
             if (entryState != null)
             {
