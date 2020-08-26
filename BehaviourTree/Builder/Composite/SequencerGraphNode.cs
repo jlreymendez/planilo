@@ -8,12 +8,6 @@ namespace Planilo.BT.Builder
         {
             return new Sequencer<T>(children, index);
         }
-
-        protected override void Init()
-        {
-            base.Init();
-            name = "Sequencer";
-        }
         #endregion
     }
 }

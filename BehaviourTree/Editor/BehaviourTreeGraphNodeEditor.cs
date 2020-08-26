@@ -12,6 +12,12 @@ namespace Planilo.BT.Editor
         Color inactiveColor = new Color(0.5f, 0.5f, 0.5f);
         Color runningColor = new Color(0.43f, 0.41f, 0.18f);
 
+        public override void OnHeaderGUI()
+        {
+            var name = target.name.Replace(" Graph", "");
+            GUILayout.Label(name, NodeEditorResources.styles.nodeHeader, GUILayout.Height(30));
+        }
+
         public override Color GetTint()
         {
             // Make sure node is connected.
