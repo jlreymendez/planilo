@@ -4,7 +4,7 @@ using XNode;
 
 namespace Planilo.FSM.Builder
 {
-    [NodeTint("#2e6b38")]
+    [NodeTint("#2e506b")]
     public abstract class FiniteStateMachineStateGraphNode : FiniteStateMachineGraphNode
     {
         #region Internal
