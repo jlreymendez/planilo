@@ -2,10 +2,10 @@
 
 namespace Planilo.FSM.Builder
 {
-    [CreateNodeMenu("FSM/Transitions/Always")]
-    public class AlwaysTransitionGraphNode : Node
+    [CreateNodeMenu("Planilo/FSM/Transitions/Always")]
+    public class AlwaysTransitionGraphNode : FiniteStateMachineTransitionGraphNode
     {
-        public FiniteStateMachineTransition<T> Build<T>(int targetIndex)
+        public override FiniteStateMachineTransition<T> Build<T>(int targetIndex)
         {
             return new FiniteStateMachineTransition<T>()
             {
