@@ -8,5 +8,8 @@
     "unity",
     "ai"
   ],
-  "unity": "2019.1"
+  "unity": "2019.1",
+  "dependencies": {
+    "com.github.siccity.xnode": "1.8.0"
+  }
 }
