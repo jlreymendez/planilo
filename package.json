@@ -2,7 +2,7 @@
   "name": "com.github.jlreymendez.planilo",
   "displayName": "Planilo",
   "description": "A set of Unity Editor tools for designing AI Graphs like Behavior Trees and Finite State Machines",
-  "version": "0.2.0-preview",
+  "version": "0.2.0-preview.1",
   "keywords":
   [
     "unity",
