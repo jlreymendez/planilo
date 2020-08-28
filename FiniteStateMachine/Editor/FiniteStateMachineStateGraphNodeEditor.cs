@@ -46,7 +46,12 @@ namespace Planilo.FSM.Editor
             return GetEditorTint();
         }
 
-        Color GetEditorTint()
+        protected Color GetRunningColor()
+        {
+            return runningColor;
+        }
+
+        protected Color GetEditorTint()
         {
             var node = target as FiniteStateMachineStateGraphNode;
             var isDisconnected = node.GetInputPort("entry").Connection == null;

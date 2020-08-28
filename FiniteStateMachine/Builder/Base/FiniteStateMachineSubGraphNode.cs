@@ -54,6 +54,8 @@ namespace Planilo.FSM.Builder
 
             return exitStates.ToArray();
         }
+
+        public FiniteStateMachineGraph SubGraph => subGraph;
         #endregion
 
         #region Protected
@@ -61,9 +63,8 @@ namespace Planilo.FSM.Builder
         #endregion
 
         #region Private
-        [SerializeField] FiniteStateMachineGraph subGraph;
-        [SerializeField] FiniteStateMachineGraphExitType exitType;
-
+        [SerializeField] FiniteStateMachineGraph subGraph = default;
+        [SerializeField] FiniteStateMachineGraphExitType exitType = default;
         #endregion
     }
 
