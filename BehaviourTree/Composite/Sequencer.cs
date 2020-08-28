@@ -8,9 +8,9 @@ namespace Planilo.BT
         public override BehaviourTreeResult Update(ref T agent, BehaviourTreeNodeState[] states)
         {
             ref var state = ref states[nodeIndex];
-            while (current)
+            while (Current(state) != null)
             {
-                state.Result = current.Run(ref agent, states);
+                state.Result = Current(state).Run(ref agent, states);
                 if (!state.IsSuccess) { break; }
                 NextChild(ref state);
             }
