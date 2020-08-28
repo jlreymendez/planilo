@@ -4,5 +4,5 @@ using PlaniloSamples.Common;
 
 namespace PlaniloSamples.BT
 {
-    public class GathererBTDebugger : BehaviourDebugger<BehaviourTreeGraph, BehaviourTreeState> { }
+    public class GatherersBTManager : GatherersManager<BehaviourTreeGraph, BehaviourTreeState> { }
 }

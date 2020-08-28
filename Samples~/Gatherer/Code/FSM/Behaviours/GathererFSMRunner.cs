@@ -1,11 +1,11 @@
-using Planilo.BT;
-using Planilo.BT.Builder;
+﻿using Planilo.FSM;
+using Planilo.FSM.Builder;
 using PlaniloSamples.Common;
 using UnityEngine;
 
-namespace PlaniloSamples.BT
+namespace PlaniloSamples.FSM
 {
-    public class GathererBTRunner : BehaviourRunner<BehaviourTreeGraph, BehaviourTreeState, Gatherer>
+    public class GathererFSMRunner : BehaviourRunner<FiniteStateMachineGraph, FiniteStateMachineRuntimeState, Gatherer>
     {
         [Header("Sample 01")]
         public float Speed;
