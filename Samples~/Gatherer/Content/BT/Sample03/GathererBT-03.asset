@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-664612560427989445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4c86fb00794ade9d41dbd82f12ea61, type: 3}
+  m_Name: Behaviour Tree Sub Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: -40}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -664612560427989445}
+      _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children 0
+        node: {fileID: 5699466600653079777}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  isRoot: 0
+  subGraph: {fileID: 11400000, guid: 8508a9d30c031ab43845b7f4fdacc7e2, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1180afa5dc987974da2f70507dec4e21, type: 3}
+  m_Name: GathererBT-03
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 5699466600653079777}
+  - {fileID: 5400389990176100079}
+  - {fileID: -664612560427989445}
+  root: {fileID: 5699466600653079777}
+--- !u!114 &5400389990176100079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4c86fb00794ade9d41dbd82f12ea61, type: 3}
+  m_Name: Behaviour Tree Sub Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: 72}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 5400389990176100079}
+      _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children 1
+        node: {fileID: 5699466600653079777}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  isRoot: 0
+  subGraph: {fileID: 11400000, guid: 9bfb238198ae1da40a943ff0f2726144, type: 2}
+--- !u!114 &5699466600653079777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c0b00122704a0d83cbe9f1b074eb53, type: 3}
+  m_Name: Selector Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -24}
+  ports:
+    keys:
+    - children
+    - parent
+    - children 0
+    - children 1
+    values:
+    - _fieldName: children
+      _node: {fileID: 5699466600653079777}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 5699466600653079777}
+      _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: children 0
+      _node: {fileID: 5699466600653079777}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: parent
+        node: {fileID: -664612560427989445}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: children 1
+      _node: {fileID: 5699466600653079777}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: parent
+        node: {fileID: 5400389990176100079}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  isRoot: 1
+  children: []

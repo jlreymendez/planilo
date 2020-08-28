@@ -11,5 +11,13 @@
   "unity": "2019.1",
   "dependencies": {
     "com.github.siccity.xnode": "1.8.0"
-  }
+  },
+  "samples":
+  [
+    {
+      "displayName": "Gatherer",
+      "description": "A set of gatherer AI samples using Behaviour Trees and Finite State Machines.",
+      "path": "Samples~/Gatherer"
+    }
+  ]
 }

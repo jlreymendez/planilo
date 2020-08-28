@@ -1,0 +1,592 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9128099374268739313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7369c90c41f7469ab6178a63d1117fe8, type: 3}
+  m_Name: Consume Resource State Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 40, y: 296}
+  ports:
+    keys:
+    - entry
+    - transitions
+    - transitions 0
+    values:
+    - _fieldName: entry
+      _node: {fileID: -9128099374268739313}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: target
+        node: {fileID: -5505001756169161717}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions
+      _node: {fileID: -9128099374268739313}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions 0
+      _node: {fileID: -9128099374268739313}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: -7043699198241317189}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  transitions: []
+  isEntry: 0
+  isExit: 0
+--- !u!114 &-7043699198241317189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f7728263c24687b8653873d7007634, type: 3}
+  m_Name: Always Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 40, y: 456}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: -7043699198241317189}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 0
+        node: {fileID: -9128099374268739313}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: -7043699198241317189}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 3642781729322092997}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-5505001756169161717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d87c294d43b4c53a3d64335776dccd8, type: 3}
+  m_Name: Target Reached Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 40, y: 760}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: -5505001756169161717}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 0
+        node: {fileID: 996138240502441056}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: -5505001756169161717}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: -9128099374268739313}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-4493274378432823143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d87c294d43b4c53a3d64335776dccd8, type: 3}
+  m_Name: Target Reached Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1176, y: 376}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: -4493274378432823143}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 0
+        node: {fileID: 8959987372097436081}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: -4493274378432823143}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: -4388663539507761643}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-4433747208530934872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a116ab9b5ea43999e6d547dfc91c14b, type: 3}
+  m_Name: Resource Picked Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1048, y: 824}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: -4433747208530934872}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 0
+        node: {fileID: -4388663539507761643}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: -4433747208530934872}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 996138240502441056}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-4388663539507761643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a48d9d87324eb3a78f60d0de091eb1, type: 3}
+  m_Name: Pick Resource State Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 824, y: 824}
+  ports:
+    keys:
+    - entry
+    - transitions
+    - transitions 0
+    - transitions 1
+    values:
+    - _fieldName: entry
+      _node: {fileID: -4388663539507761643}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: target
+        node: {fileID: -4493274378432823143}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions
+      _node: {fileID: -4388663539507761643}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions 0
+      _node: {fileID: -4388663539507761643}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: -4433747208530934872}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: transitions 1
+      _node: {fileID: -4388663539507761643}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: 8298526771882614224}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  transitions: []
+  isEntry: 0
+  isExit: 0
+--- !u!114 &-2766070802168361328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6bf345c7e45f79e63c44baf9fe264, type: 3}
+  m_Name: Found Resource Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 744, y: 184}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: -2766070802168361328}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 0
+        node: {fileID: 3642781729322092997}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: -2766070802168361328}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 8959987372097436081}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd908a76ba246eb91d13f28a40a4143, type: 3}
+  m_Name: GathererFSM
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 3642781729322092997}
+  - {fileID: -2766070802168361328}
+  - {fileID: 8959987372097436081}
+  - {fileID: -4493274378432823143}
+  - {fileID: -4388663539507761643}
+  - {fileID: 8298526771882614224}
+  - {fileID: -5505001756169161717}
+  - {fileID: -4433747208530934872}
+  - {fileID: -9128099374268739313}
+  - {fileID: -7043699198241317189}
+  - {fileID: 996138240502441056}
+  entryState: {fileID: 3642781729322092997}
+--- !u!114 &996138240502441056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e601dc71e4749d3acc7a59b2c924ff7, type: 3}
+  m_Name: Go Home State Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 40, y: 872}
+  ports:
+    keys:
+    - entry
+    - transitions
+    - transitions 0
+    values:
+    - _fieldName: entry
+      _node: {fileID: 996138240502441056}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: target
+        node: {fileID: -4433747208530934872}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions
+      _node: {fileID: 996138240502441056}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions 0
+      _node: {fileID: 996138240502441056}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: -5505001756169161717}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  transitions: []
+  isEntry: 0
+  isExit: 0
+--- !u!114 &3642781729322092997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2480d82061c942deac16aaf1273f2e7c, type: 3}
+  m_Name: Find Resource State Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: 152}
+  ports:
+    keys:
+    - entry
+    - transitions
+    - transitions 0
+    values:
+    - _fieldName: entry
+      _node: {fileID: 3642781729322092997}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: target
+        node: {fileID: 8298526771882614224}
+        reroutePoints: []
+      - fieldName: target
+        node: {fileID: -7043699198241317189}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions
+      _node: {fileID: 3642781729322092997}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions 0
+      _node: {fileID: 3642781729322092997}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: -2766070802168361328}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  transitions: []
+  isEntry: 1
+  isExit: 1
+--- !u!114 &8298526771882614224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ada97dc1e42238e771dd6e1264605, type: 3}
+  m_Name: Resource Unavailable Transition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1048, y: 920}
+  ports:
+    keys:
+    - source
+    - target
+    values:
+    - _fieldName: source
+      _node: {fileID: 8298526771882614224}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: transitions 1
+        node: {fileID: -4388663539507761643}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: target
+      _node: {fileID: 8298526771882614224}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 3642781729322092997}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &8959987372097436081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208d0805e7004efb8763b88ab70d028c, type: 3}
+  m_Name: Move To Target State Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 952, y: 328}
+  ports:
+    keys:
+    - entry
+    - transitions
+    - transitions 0
+    values:
+    - _fieldName: entry
+      _node: {fileID: 8959987372097436081}
+      _typeQualifiedName: Planilo.FSM.Builder.FiniteStateMachineConnectionToState,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: target
+        node: {fileID: -2766070802168361328}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions
+      _node: {fileID: 8959987372097436081}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: transitions 0
+      _node: {fileID: 8959987372097436081}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.FSM.Builder.FiniteStateMachineConnectionToTransition,
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: source
+        node: {fileID: -4493274378432823143}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  transitions: []
+  isEntry: 0
+  isExit: 0

@@ -5,7 +5,6 @@ namespace Planilo.BT
     public abstract class BehaviourTreeNode<T>
     {
         #region Constructor
-
         public BehaviourTreeNode(int nodeIndex)
         {
             this.nodeIndex = nodeIndex;
