@@ -20,6 +20,7 @@ namespace PlaniloSamples.BT
 
             agent.Resource.Consume();
             agent.Resource = null;
+
             return BehaviourTreeResult.Success;
         }
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Found Resource Transition Graph
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 504, y: 616}
+  position: {x: 568, y: 504}
   ports:
     keys:
     - source
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: Find Resource State Graph
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 520, y: 744}
+  position: {x: 584, y: 616}
   ports:
     keys:
     - entry
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: Move To Target State Graph
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: 520}
+  position: {x: 1128, y: 392}
   ports:
     keys:
     - entry

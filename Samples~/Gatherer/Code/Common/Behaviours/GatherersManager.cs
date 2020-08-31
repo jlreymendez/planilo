@@ -22,6 +22,7 @@ namespace PlaniloSamples.Common
         TBehaviourState[] gathererStates;
         Gatherer[] gatherers;
         GameObject[] gathererGos;
+        bool alarm;
 
         IEnumerator Start()
         {
@@ -93,9 +94,17 @@ namespace PlaniloSamples.Common
 
         void Update()
         {
+            // Toggle alarm in world state.
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                alarm = !alarm;
+            }
+            // Find all available resources
             var resources = FindObjectsOfType<Resource>();
+            // Run behaviours and update the world state.
             for (var i = 0; i < gatherersCount; i++)
             {
+                gatherers[i].World.Alarm = alarm;
                 gatherers[i].World.Resources = resources;
                 behaviourTree.Run(ref gatherers[i], ref gathererStates[i]);
             }

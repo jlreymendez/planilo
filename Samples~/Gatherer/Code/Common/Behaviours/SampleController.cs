@@ -42,6 +42,7 @@ namespace PlaniloSamples.Common
             {
                 var resource = Instantiate(resourcePrefab);
                 resource.OnPicked += Resource_OnPick;
+                resource.OnConsumed += Resource_OnConsume;
                 resource.gameObject.SetActive(false);
                 recycledResources.Add(resource);
             }
@@ -63,7 +64,10 @@ namespace PlaniloSamples.Common
 
         void Resource_OnPick(Resource resource)
         {
-            resource.gameObject.SetActive(false);
+        }
+
+        void Resource_OnConsume(Resource resource)
+        {
             recycledResources.Add(resource);
         }
     }

@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using Planilo.FSM;
+﻿using Planilo.FSM;
 using Planilo.FSM.Builder;
 using PlaniloSamples.Common;
 using UnityEngine;

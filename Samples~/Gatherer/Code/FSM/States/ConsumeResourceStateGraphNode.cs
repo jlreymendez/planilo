@@ -12,6 +12,7 @@ namespace PlaniloSamples.FSM
             if (agent.Resource != null)
             {
                 agent.Resource.Consume();
+                agent.Resource = null;
             }
         }
     }

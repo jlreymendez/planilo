@@ -6,5 +6,6 @@ namespace PlaniloSamples.Common
     {
         public Vector3 Home;
         public Resource[] Resources;
+        public bool Alarm;
     }
 }
