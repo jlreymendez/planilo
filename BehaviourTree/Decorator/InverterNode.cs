@@ -12,8 +12,14 @@
             ref var state = ref states[nodeIndex];
             state.Result = UpdateChild(ref agent, states);
 
-            if (state.IsFailure) { state.Result = BehaviourTreeResult.Success; }
-            if (state.IsSuccess) { state.Result = BehaviourTreeResult.Failure; }
+            if (state.IsFailure)
+            {
+                state.Result = BehaviourTreeResult.Success;
+            }
+            else if (state.IsSuccess)
+            {
+                state.Result = BehaviourTreeResult.Failure;
+            }
 
             return state.Result;
         }
