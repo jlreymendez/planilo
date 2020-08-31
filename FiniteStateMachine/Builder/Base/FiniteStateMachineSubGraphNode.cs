@@ -18,7 +18,7 @@ namespace Planilo.FSM.Builder
             // Create subgraph.
             subGraph.EntryState.Build(ref nextIndex, states, idToIndexMap);
 
-            var exitStates = GetExitStates(states, idToIndexMap);
+            var exitStates = GetExitStates(states, idToIndexMap, exitType);
 
             foreach (var exitState in exitStates)
             {
@@ -29,7 +29,7 @@ namespace Planilo.FSM.Builder
             }
         }
 
-        internal FiniteStateMachineState<T>[] GetExitStates<T>(List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap)
+        internal FiniteStateMachineState<T>[] GetExitStates<T>(List<FiniteStateMachineState<T>> states, Dictionary<int, int> idToIndexMap, FiniteStateMachineGraphExitType withExitType)
         {
             var exitStates = new List<FiniteStateMachineState<T>>();
             foreach (var node in subGraph.nodes)
@@ -38,12 +38,12 @@ namespace Planilo.FSM.Builder
                 if (stateNode == null) continue;
 
                 if (idToIndexMap.ContainsKey(node.GetInstanceID()) == false) continue;
-                if (exitType == FiniteStateMachineGraphExitType.ExitOnly && stateNode.IsExit == false) continue;
+                if (withExitType == FiniteStateMachineGraphExitType.ExitOnly && stateNode.IsExit == false) continue;
 
                 var subGraphNode = stateNode as FiniteStateMachineSubGraphNode;
                 if (subGraphNode != null)
                 {
-                    exitStates.AddRange(subGraphNode.GetExitStates(states, idToIndexMap));
+                    exitStates.AddRange(subGraphNode.GetExitStates(states, idToIndexMap, withExitType));
                 }
                 else
                 {
