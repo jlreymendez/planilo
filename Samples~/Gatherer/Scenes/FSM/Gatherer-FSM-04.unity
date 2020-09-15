@@ -479,15 +479,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<b>SAMPLE 4:</b>
-
-
-    This sample shows how the ExitType from All  option
-    in SubGraph nodes may be used to introduce priorities to tasks.
-
-
-    <color=red><b>Press
-    ''A''</b></color> to raise the alarm making the gatherers hide at home.'
+  m_Text: "<b>SAMPLE 4:</b>\n\nThis sample shows how the ExitType from All  option
+    in SubGraph nodes may be used to introduce priorities to tasks. When a FSM of
+    a top level requests a transition, lower level machines will exit immediately
+    without waiting to reach an exit state. \n\nIt is important for the programmer
+    to be aware of this and consider what the consequences are of stopping a task
+    while it hasn't changed. Using the <b>OnEnter</b> and <b>OnExit</b> methods are
+    key to resetting the the agent and the world to a correct state.\n\n<color=red><b>Press
+    'A'</b></color> to raise the alarm making the gatherers hide at home."
 --- !u!114 &3711095349765484328
 MonoBehaviour:
   m_ObjectHideFlags: 0
