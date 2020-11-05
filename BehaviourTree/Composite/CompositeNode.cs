@@ -10,8 +10,9 @@ namespace Planilo.BT
         #endregion
 
         #region Public
-        public override void Initialize(ref T agent, ref BehaviourTreeNodeState nodeState)
+        public override void Initialize(ref T agent, BehaviourTreeNodeState[] states)
         {
+            ref var nodeState = ref states[nodeIndex];
             nodeState.Enumerator = new BehaviourTreeEnumerator(children.Length);
             nodeState.Result = BehaviourTreeResult.Success;
             NextChild(ref nodeState);
