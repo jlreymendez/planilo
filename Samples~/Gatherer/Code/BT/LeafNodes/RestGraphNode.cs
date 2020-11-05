@@ -11,9 +11,8 @@ namespace PlaniloSamples.BT
     {
         public RestNode(int index) : base(index) {}
 
-        public override void Initialize(ref Gatherer agent, ref BehaviourTreeNodeState state)
+        public override void Initialize(ref Gatherer agent, BehaviourTreeNodeState[] states)
         {
-            base.Initialize(ref agent, ref state);
             agent.LastRest = Time.time;
         }
 
@@ -22,7 +21,7 @@ namespace PlaniloSamples.BT
             return Time.time - agent.LastRest > agent.RestTime ? BehaviourTreeResult.Success : BehaviourTreeResult.Running;
         }
 
-        public override void Finalize(ref Gatherer agent, ref BehaviourTreeNodeState state)
+        public override void Finalize(ref Gatherer agent, BehaviourTreeNodeState[] states)
         {
             agent.LastRest = Time.time;
         }

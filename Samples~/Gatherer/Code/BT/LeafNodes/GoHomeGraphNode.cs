@@ -11,7 +11,7 @@ namespace PlaniloSamples.BT
     {
         public GoHomeNode(int index) : base(index) {}
 
-        public override void Initialize(ref Gatherer agent, ref BehaviourTreeNodeState nodeState)
+        public override void Initialize(ref Gatherer agent, BehaviourTreeNodeState[] states)
         {
             agent.Target = agent.World.Home;
         }
