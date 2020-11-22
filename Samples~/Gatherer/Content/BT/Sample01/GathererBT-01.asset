@@ -57,6 +57,9 @@ MonoBehaviour:
       - fieldName: children 4
         node: {fileID: -4761223669846172206}
         reroutePoints: []
+      - fieldName: children 4
+        node: {fileID: -4761223669846172206}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -85,6 +88,9 @@ MonoBehaviour:
       _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
+      - fieldName: children 1
+        node: {fileID: -4761223669846172206}
+        reroutePoints: []
       - fieldName: children 1
         node: {fileID: -4761223669846172206}
         reroutePoints: []
@@ -139,8 +145,8 @@ MonoBehaviour:
     - _fieldName: children 0
       _node: {fileID: -4761223669846172206}
       _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
-        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: parent
         node: {fileID: -7808339345627129985}
@@ -152,8 +158,8 @@ MonoBehaviour:
     - _fieldName: children 1
       _node: {fileID: -4761223669846172206}
       _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
-        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: parent
         node: {fileID: -5997825973166041288}
@@ -165,8 +171,8 @@ MonoBehaviour:
     - _fieldName: children 2
       _node: {fileID: -4761223669846172206}
       _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
-        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: parent
         node: {fileID: 6550264594699578903}
@@ -178,8 +184,8 @@ MonoBehaviour:
     - _fieldName: children 3
       _node: {fileID: -4761223669846172206}
       _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
-        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: parent
         node: {fileID: -3922521274957318358}
@@ -191,8 +197,8 @@ MonoBehaviour:
     - _fieldName: children 4
       _node: {fileID: -4761223669846172206}
       _typeQualifiedName: System.Collections.Generic.List`1[[Planilo.BT.Builder.BehaviourTreeGraphConnection,
-        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        Planilo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: parent
         node: {fileID: -7204815355833042621}
@@ -229,6 +235,9 @@ MonoBehaviour:
       - fieldName: children 3
         node: {fileID: -4761223669846172206}
         reroutePoints: []
+      - fieldName: children 3
+        node: {fileID: -4761223669846172206}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -250,9 +259,9 @@ MonoBehaviour:
   - {fileID: -4761223669846172206}
   - {fileID: -7204815355833042621}
   - {fileID: -7808339345627129985}
+  - {fileID: -3922521274957318358}
   - {fileID: -5997825973166041288}
   - {fileID: 6550264594699578903}
-  - {fileID: -3922521274957318358}
   root: {fileID: -4761223669846172206}
 --- !u!114 &6550264594699578903
 MonoBehaviour:
@@ -277,6 +286,9 @@ MonoBehaviour:
       _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
+      - fieldName: children 2
+        node: {fileID: -4761223669846172206}
+        reroutePoints: []
       - fieldName: children 2
         node: {fileID: -4761223669846172206}
         reroutePoints: []

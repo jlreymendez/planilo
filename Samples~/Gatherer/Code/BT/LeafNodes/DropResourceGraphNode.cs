@@ -22,6 +22,7 @@ namespace PlaniloSamples.BT
         }
     }
 
+    [CreateNodeMenuAttribute("PlaniloSamples/Gatherer/DropResource")]
     public class DropResourceGraphNode : LeafGraphNode
     {
         #region Protected

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ac5a52e81843fb838880aaeb330450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviourDefinition: {fileID: 11400000, guid: 48bbfe83bac28f34ebe22b97145cc2b6,
+  BehaviourDefinition: {fileID: 11400000, guid: 48bbfe83bac28f34ebe22b97145cc2b6,
     type: 2}
   Speed: 0.5
   Reach: 0.05

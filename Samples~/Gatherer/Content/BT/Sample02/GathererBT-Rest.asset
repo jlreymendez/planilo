@@ -128,8 +128,8 @@ MonoBehaviour:
   nodes:
   - {fileID: -8714636845344808043}
   - {fileID: -8909599937186210244}
-  - {fileID: 245571359189174779}
   - {fileID: 6968247319495891165}
+  - {fileID: 245571359189174779}
   root: {fileID: -8714636845344808043}
 --- !u!114 &245571359189174779
 MonoBehaviour:
@@ -154,6 +154,9 @@ MonoBehaviour:
       _typeQualifiedName: Planilo.BT.Builder.BehaviourTreeGraphConnection, Planilo,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
+      - fieldName: children 2
+        node: {fileID: -8714636845344808043}
+        reroutePoints: []
       - fieldName: children 2
         node: {fileID: -8714636845344808043}
         reroutePoints: []

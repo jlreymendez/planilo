@@ -1,12 +1,18 @@
-﻿using Planilo.FSM;
+﻿using Planilo;
+using Planilo.FSM;
 using Planilo.FSM.Builder;
 using PlaniloSamples.Common;
 using UnityEngine;
 
 namespace PlaniloSamples.FSM
 {
-    public class GathererFSMRunner : BehaviourRunner<FiniteStateMachineGraph, FiniteStateMachineRuntimeState, Gatherer>
+    public class GathererFSMRunner : MonoBehaviour,
+        // Note: this is only required for debugging the agent in the planilo graph tool
+        IAIBehaviourDebugger<FiniteStateMachineGraph, FiniteStateMachineRuntimeState>
     {
+        [Header("General")]
+        public FiniteStateMachineGraph BehaviourDefinition;
+
         [Header("Sample 01")]
         public float Speed;
         public float Reach;
@@ -15,13 +21,20 @@ namespace PlaniloSamples.FSM
         public float WorkTime;
         public float RestTime;
 
-        protected override void UpdateWorldState()
+        Gatherer agent = default;
+        FiniteStateMachineRuntimeState fsmRuntimeState = default;
+        IAIBehaviour<Gatherer, FiniteStateMachineRuntimeState> fsm = default;
+
+        void Awake()
         {
-            agent.World.Resources = FindObjectsOfType<Resource>();
+            // We need to create an FSM based on the graph definition. And initialize the state for the agent.
+            fsm = BehaviourDefinition.Build<Gatherer>();
+            fsmRuntimeState = fsm.Initialize(ref agent);
         }
 
         void Start()
         {
+            // Initialize agent on start once all required objects have initialized.
             agent.Id = GetInstanceID();
             agent.World.Home = FindObjectOfType<Home>().transform.position;
             agent.Speed = Speed;
@@ -31,5 +44,27 @@ namespace PlaniloSamples.FSM
             agent.WorkTime = WorkTime;
             agent.RestTime = RestTime;
         }
+        void Update()
+        {
+            // Update agent sensors.
+            agent.World.Resources = FindObjectsOfType<Resource>();
+            // Execute finite state machine.
+            // Every update we pass by reference the agent and the last state.
+            fsm.Run(ref agent, ref fsmRuntimeState);
+        }
+
+    #if UNITY_EDITOR
+        #region Editor
+        public FiniteStateMachineRuntimeState GetState()
+        {
+            return fsmRuntimeState;
+        }
+
+        public FiniteStateMachineGraph GetBehaviour()
+        {
+            return BehaviourDefinition;
+        }
+        #endregion
+    #endif
     }
 }
