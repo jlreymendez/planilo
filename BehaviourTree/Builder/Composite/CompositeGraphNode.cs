@@ -6,6 +6,7 @@ namespace Planilo.BT.Builder
     [NodeTint("#2e4e6b")]
     public abstract class CompositeGraphNode : BehaviourTreeGraphNode
     {
+        public AbortType abortType;
         #region Public
         public override int Size
         {
@@ -46,7 +47,7 @@ namespace Planilo.BT.Builder
         {
             var nodeIndex = index;
             var builtChildren = BuildChildren<T>(ref index);
-            return BuildNode(builtChildren, nodeIndex);
+            return BuildNode(builtChildren, nodeIndex,abortType);
         }
 
         protected BehaviourTreeNode<T>[] BuildChildren<T>(ref int index)
@@ -65,7 +66,7 @@ namespace Planilo.BT.Builder
             return childrenNodes;
         }
 
-        protected abstract CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index);
+        protected abstract CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index,AbortType abortType);
         #endregion
 
         #region Private

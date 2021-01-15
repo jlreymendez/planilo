@@ -4,9 +4,9 @@ namespace Planilo.BT.Builder
     public class SelectorGraphNode : CompositeGraphNode
     {
         #region Protected
-        protected override CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index)
+        protected override CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index,AbortType abortType)
         {
-            return new Selector<T>(children, index);
+            return new Selector<T>(children, index,abortType);
         }
         #endregion
     }

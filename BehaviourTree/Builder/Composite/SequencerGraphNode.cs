@@ -4,9 +4,9 @@ namespace Planilo.BT.Builder
     public class SequencerGraphNode : CompositeGraphNode
     {
         #region Protected
-        protected override CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index)
+        protected override CompositeNode<T> BuildNode<T>(BehaviourTreeNode<T>[] children, int index,AbortType abortType)
         {
-            return new Sequencer<T>(children, index);
+            return new Sequencer<T>(children, index,abortType);
         }
         #endregion
     }

@@ -2,10 +2,12 @@ namespace Planilo.BT
 {
     public abstract class CompositeNode<T> : BehaviourTreeNode<T>
     {
+        public AbortType abortType;
         #region Constructor
-        public CompositeNode(BehaviourTreeNode<T>[] children, int index) : base(index)
+        public CompositeNode(BehaviourTreeNode<T>[] children, int index,AbortType abortType) : base(index)
         {
             this.children = children;
+            this.abortType = abortType;
         }
         #endregion
 

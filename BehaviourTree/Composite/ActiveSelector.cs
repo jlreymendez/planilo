@@ -2,7 +2,7 @@
 {
     public class ActiveSelector<T> : Selector<T>
     {
-        public ActiveSelector(BehaviourTreeNode<T>[] children, int index) : base(children, index) {}
+        public ActiveSelector(BehaviourTreeNode<T>[] children, int index,AbortType abortType) : base(children, index,abortType) {}
 
         public override BehaviourTreeResult Update(ref T agent, BehaviourTreeNodeState[] states)
         {
