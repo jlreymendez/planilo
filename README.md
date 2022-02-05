@@ -1,7 +1,5 @@
 ![planilo](https://user-images.githubusercontent.com/1077394/91163953-be4d8d80-e6a4-11ea-9f86-127a6374235d.png)
 
-[![Discord](http://img.shields.io/badge/discord-join-lightblue?logo=discord&style=flat)](https://discord.gg/QrMfMsy)
-
 A set of tools for designing AI in a visual node editor on unity. Use for:
 * Behavior Trees.
 * Finite State Machines.
