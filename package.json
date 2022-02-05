@@ -1,7 +1,20 @@
 {
   "name": "com.github.jlreymendez.planilo",
-  "description": "A xNode based tool for designing AI Graphs like Behavior Trees and Finite State Machines in Unity",
-  "version": "0.1.0",
-  "unity": "2018.1",
-  "displayName": "planilo"
+  "displayName": "Planilo",
+  "description": "A set of Unity Editor tools for designing AI Graphs like Behavior Trees and Finite State Machines",
+  "version": "0.2.0-preview.1",
+  "keywords":
+  [
+    "unity",
+    "ai"
+  ],
+  "unity": "2019.1",
+  "samples":
+  [
+    {
+      "displayName": "Gatherer",
+      "description": "A set of gatherer AI samples using Behaviour Trees and Finite State Machines.",
+      "path": "Samples~/Gatherer"
+    }
+  ]
 }
